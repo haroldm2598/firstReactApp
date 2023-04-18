@@ -4,6 +4,12 @@ const user = {
 	imageSize: 90
 };
 
+const user2 = {
+	name: 'Katherine Johnson',
+	imageUrl: 'https://i.imgur.com/MK3eW3Am.jpg',
+	imageSize: 90
+};
+
 export function MyImage() {
 	return (
 		<img
@@ -12,6 +18,20 @@ export function MyImage() {
 			style={{
 				width: user.imageSize,
 				height: user.imageSize
+			}}
+		></img>
+	);
+}
+
+export function Profile({ person = { name: user2.name }, size }) {
+	return (
+		<img
+			className='avatar'
+			src={user2.imageUrl}
+			alt={person.name}
+			style={{
+				width: size,
+				height: size
 			}}
 		></img>
 	);
